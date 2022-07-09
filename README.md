@@ -13,7 +13,7 @@ discord application command in cf workers
 
 ![image](https://user-images.githubusercontent.com/73212588/178113832-8502f6dd-e31b-4902-a684-477bab8c6741.png)
 
-5. Put `CLIENT_ID` and `CLIENT_SECRET` from the OAuth2 page in the `config.js` file as shown in the example. (These are used to exchange for a token (see [this](https://github.com/ig1711/tags-dappcmd-cfw/blob/main/init/commandmanager.js#L3-L29)), which is used only to register commands, for example, see [this]())
+5. Put `CLIENT_ID` and `CLIENT_SECRET` from the OAuth2 page in the `config.js` file as shown in the example. (These are used to exchange for a token (see [this](https://github.com/ig1711/tags-dappcmd-cfw/blob/main/init/commandmanager.js#L3-L29)), which is used only to register commands, for example, see [this](https://github.com/ig1711/tags-dappcmd-cfw/blob/main/init/commandmanager.js#L63-L70))
 
 6. Put the discord guild id as `SERVER_ID` as well, in the `config.js` file
 
@@ -29,7 +29,7 @@ discord application command in cf workers
 
 12. Copy the ngrok url (https one)
 
-13. Go to your applicataion in the discord applications page, paste the ngrok url in the `Interactions Endpoint URL` field and hit Save. Cross your fimgers and wait for it to get the url accepted
+13. Go to your applicataion in the discord applications page, paste the ngrok url in the `Interactions Endpoint URL` field and hit Save. Cross your fingers and wait for it to get the url accepted
 
 14. Test the `/tag` command in your test server
 
