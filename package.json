@@ -9,6 +9,7 @@
   "scripts": {
     "start": "wrangler dev",
     "deploy": "wrangler publish",
+    "put_public_key": "wrangler secret put PUBLIC_KEY",
     "init": "node --experimental-specifier-resolution=node ./init/createGuildCommand.js",
     "ngrok": "npx ngrok http 8787"
   }
