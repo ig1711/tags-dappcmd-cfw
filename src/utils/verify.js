@@ -24,14 +24,12 @@ const publicKey = key =>
 
 const encoder = new TextEncoder();
 
-export async function verify(request, env) {
-  const signature = hex2bin(request.headers.get('X-Signature-Ed25519'));
-  const timestamp = request.headers.get('X-Signature-Timestamp');
-  const unknown = await request.clone().text();
+export async function verify(body, signature, timestamp, pubKey) {
+  const signatureBin = hex2bin(signature);
   return await crypto.subtle.verify(
     'NODE-ED25519',
-    await publicKey(env.PUBLIC_KEY),
-    signature,
-    encoder.encode(timestamp + unknown)
+    await publicKey(pubKey),
+    signatureBin,
+    encoder.encode(timestamp + body)
   );
 }

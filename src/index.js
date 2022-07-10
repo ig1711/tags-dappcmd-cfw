@@ -4,12 +4,15 @@ import { JsonResponse } from './utils/jsonresponse';
 
 async function fetch(request, env) {
   const signature = request.headers.get('x-signature-ed25519');
-  if (!signature) return new Response('', { status: 401 });
+  const timestamp = request.headers.get('X-Signature-Timestamp');
+  if (!signature || !timestamp) return new Response('', { status: 401 });
 
-  const isValidRequest = await verify(request, env); // todo: handle rejection
+  const body = await request.text();
+  
+  const isValidRequest = await verify(body, signature, timestamp, env.PUBLIC_KEY); // todo: handle rejection
   if (!isValidRequest) return new Response('', { status: 401 });
 
-  const interaction = await request.json(); // todo: ^
+  const interaction = JSON.parse(body);
 
   const handle = handlers[interaction.type];
   if (!handle)
