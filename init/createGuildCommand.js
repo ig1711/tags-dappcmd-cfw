@@ -1,5 +1,8 @@
 import { createGuildCommand } from './commandmanager.js';
-import { SERVER_ID, CLIENT_ID, CLIENT_SECRET } from '../config';
+// import { SERVER_ID, CLIENT_ID, CLIENT_SECRET } from '../config';
+
+const { SERVER_ID, CLIENT_ID, CLIENT_SECRET } = process.env;
+
 (function () {
   if (!SERVER_ID || !CLIENT_ID || !CLIENT_SECRET)
     return console.log(

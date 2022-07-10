@@ -1,8 +1,8 @@
-import { CLIENT_ID, CLIENT_SECRET } from '../config';
+// import { CLIENT_ID, CLIENT_SECRET } from '../config';
 
 const getCC = async () => {
-  const clientId = process.env.CLIENT_ID || CLIENT_ID;
-  const clientSecret = process.env.CLIENT_SECRET || CLIENT_SECRET;
+  const clientId = process.env.CLIENT_ID;
+  const clientSecret = process.env.CLIENT_SECRET;
   if (!clientId) return console.log('Client ID is required');
   if (!clientSecret) return console.log('Client secret is required');
   const string = `${clientId}:${clientSecret}`;
