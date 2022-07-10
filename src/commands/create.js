@@ -1,5 +1,6 @@
 import { JsonResponse } from '../utils/jsonresponse';
 import { tagsList, mods } from '../../database';
+import { DiscordSnowflake } from '@sapphire/snowflake';
 
 export async function create(interaction) {
   if (!mods.includes(interaction.member?.user.id || interaction.user?.id))
@@ -24,7 +25,7 @@ export async function create(interaction) {
       },
     });
 
-  const tag = { id: Date.now(), name, data };
+  const tag = { id: DiscordSnowflake.generate().toString(), name, data };
   if (alias) tag.alias = alias;
 
   tagsList.push(tag);

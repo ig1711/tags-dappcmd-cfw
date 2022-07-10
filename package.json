@@ -13,5 +13,8 @@
     "put_public_key": "wrangler secret put PUBLIC_KEY",
     "init": "node --experimental-specifier-resolution=node --require dotenv/config ./init/createGuildCommand.js",
     "ngrok": "npx ngrok http 8787"
+  },
+  "dependencies": {
+    "@sapphire/snowflake": "^3.2.2"
   }
 }

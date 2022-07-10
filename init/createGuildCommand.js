@@ -17,7 +17,7 @@ const { SERVER_ID, CLIENT_ID, CLIENT_SECRET } = process.env;
       {
         name: 'tag',
         description: 'Tag',
-        type: 4,
+        type: 3,
         required: true,
         autocomplete: true,
       },
